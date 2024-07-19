@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class ArithmeticOperations extends StatefulWidget {
@@ -15,6 +17,14 @@ class _ArithmeticOperationState extends State<ArithmeticOperations> {
   @override
   Widget build(BuildContext context) {
     
+    const buttonStyle = ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Colors.white),
+                    foregroundColor: WidgetStatePropertyAll(Colors.black),
+                    minimumSize:
+                        WidgetStatePropertyAll(Size(double.infinity, 50)),
+                    side: WidgetStatePropertyAll(BorderSide(color: Colors.black, width: 1)),
+                  );
+
     return Scaffold(
       backgroundColor: Colors.lightBlue,
       appBar: AppBar(
@@ -27,6 +37,7 @@ class _ArithmeticOperationState extends State<ArithmeticOperations> {
         backgroundColor: Colors.lightBlue,
         elevation: 5,
       ),
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -111,12 +122,7 @@ class _ArithmeticOperationState extends State<ArithmeticOperations> {
                       result = double.parse(number1.text) + double.parse(number2.text);
                     });
                   },
-                  style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.white),
-                    foregroundColor: WidgetStatePropertyAll(Colors.black),
-                    minimumSize:
-                        WidgetStatePropertyAll(Size(double.infinity, 50)),
-                  ),
+                  style: buttonStyle,
                   child: const Text("Addition")),
             ),
             Container(
@@ -129,12 +135,7 @@ class _ArithmeticOperationState extends State<ArithmeticOperations> {
                       result = double.parse(number1.text) - double.parse(number2.text);
                     });
                   },
-                  style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.white),
-                    foregroundColor: WidgetStatePropertyAll(Colors.black),
-                    minimumSize:
-                        WidgetStatePropertyAll(Size(double.infinity, 50)),
-                  ),
+                  style: buttonStyle,
                   child: const Text("Subtraction")),
             ),
             Container(
@@ -147,12 +148,7 @@ class _ArithmeticOperationState extends State<ArithmeticOperations> {
                       result = double.parse(number1.text) * double.parse(number2.text);
                     });
                   },
-                  style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.white),
-                    foregroundColor: WidgetStatePropertyAll(Colors.black),
-                    minimumSize:
-                        WidgetStatePropertyAll(Size(double.infinity, 50)),
-                  ),
+                  style: buttonStyle,
                   child: const Text("Multiply")),
             ),
             Container(
@@ -165,12 +161,7 @@ class _ArithmeticOperationState extends State<ArithmeticOperations> {
                       result = double.parse(number1.text) / double.parse(number2.text);
                     });
                   },
-                  style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.white),
-                    foregroundColor: WidgetStatePropertyAll(Colors.black),
-                    minimumSize:
-                        WidgetStatePropertyAll(Size(double.infinity, 50)),
-                  ),
+                  style: buttonStyle,
                   child: const Text("Divide")),
             ),
           ],
